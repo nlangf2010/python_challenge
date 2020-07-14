@@ -13,7 +13,7 @@ with open(budget_data_csv) as csvfile:
 	csv_header = next(csvfile)
 	# "next" makes sure that the program will move on to the next thing after the header
 
-  #  print(csvr_header)
+  #  print(csv_header)
 	print(csv_header)
 	
 	for row in csvreader:
@@ -22,7 +22,7 @@ with open(budget_data_csv) as csvfile:
 		profits_losses.append(int(row[1]))
 
 	# .append allows me to get at the specific thing I need in each row so that I can manipulate the data
-
+budget_data_zip = zip(months, profits_losses)
 
 # Print Total number of months included in dataset
 # len function tells me how many things are in a list (diff from sum which tries to add integers)
@@ -31,7 +31,6 @@ print(len(months))
 
 # Print net total amount of "Profit/Losses" over the entire period
 print("Net Total of Profits/Losses over Entire Period")
-
 print(sum(profits_losses))
 
 # Print average of the changes in "Profit/Losses" over the entire period
@@ -39,9 +38,14 @@ print(sum(profits_losses))
 # Print Greatest increase in profits (date and amount) over the entire period
 print("Greatest increase in profits")
 print(max(profits_losses))
+for date, profit_loss in budget_data_zip:
+    if profit_loss == max(profits_losses):
+        print(f'Date: {date}')
+        print(f'Greatest Profit: {max(profits_losses)}')
+
 
 # Print greatest decrease in losses (date and amount) over the entire period
-print("greatest decrase in losses")
+print("greatest decrease in losses")
 print(min(profits_losses))
 
 
