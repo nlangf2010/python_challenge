@@ -29,22 +29,34 @@ print("--------------------")
 
 # Print Total number of months included in dataset
 # len function tells me how many things are in a list (diff from sum which tries to add integers)
-print(f"Total Months: {len(months)}")
+total_months = len(months)
+print(f"Total Months: {total_months}")
 
 # Print net total amount of "Profit/Losses" over the entire period
-print(f"Net Total: ${sum(profits_losses)}")
+net_total = sum(profits_losses)
+print(f"Net Total: ${net_total}")
 
 # Print average of the changes in "Profit/Losses" over the entire period
 average = ((max(profits_losses) - min(profits_losses))/len(profits_losses))
 print(f'Average Change: ${round(average, 2)}')
 
 # Print Greatest increase in profits (date and amount) over the entire period
+greatest_profit = max(profits_losses)
+greatest_decrease = min(profits_losses)
 for date, profit_loss in budget_data_zip:
     if profit_loss == max(profits_losses):
-        print(f'Greatest Profit: {date} ${max(profits_losses)}')
+        print(f'Greatest Profit: {date} ${greatest_profit}')
     if profit_loss == min(profits_losses):
-        print(f'Greatest Decrease in Profit: {date} ${min(profits_losses)}')
+        print(f'Greatest Decrease in Profit: {date} ${greatest_decrease}')
 
+#print data to a txt file
+
+fh = open("budget_data.txt", "w")
+fh.write('Total Months: ' + str(total_months) + '\n' + 'Net Total: ' + str(net_total) + '\n'
+          + 'Average Change: ' + str(round(average, 2)) + '\n'
+		  + 'Greatest Profit: ' + str(greatest_profit) + '\n'
+		  + 'Greatest Decrease: ' + str(greatest_decrease))
+fh.close()
 		
 # Print greatest decrease in losses (date and amount) over the entire period
 
