@@ -32,22 +32,22 @@ print("--------------------")
 print(f"Total Months: {len(months)}")
 
 # Print net total amount of "Profit/Losses" over the entire period
-print(f"Net Total: {sum(profits_losses)}")
+print(f"Net Total: ${sum(profits_losses)}")
 
 # Print average of the changes in "Profit/Losses" over the entire period
+average = ((max(profits_losses) - min(profits_losses))/len(profits_losses))
+print(f'Average Change: ${round(average, 2)}')
 
 # Print Greatest increase in profits (date and amount) over the entire period
 for date, profit_loss in budget_data_zip:
     if profit_loss == max(profits_losses):
-        print(f'Greatest Profit: {date} {max(profits_losses)}')
-	if profit_loss == min(profits_losses): 
-		print(f'Greatest Decrease in Profit: {date} {min(profits_losses)}')
+        print(f'Greatest Profit: {date} ${max(profits_losses)}')
+    if profit_loss == min(profits_losses):
+        print(f'Greatest Decrease in Profit: {date} ${min(profits_losses)}')
 
 		
 # Print greatest decrease in losses (date and amount) over the entire period
-#for date, profit_loss in budget_data_zip:
-	#if profit_loss == min(profits_losses):
-		#print(f'Greatest Decrease in Profit: {date} {min(profits_losses)}')
+
 
 
 
