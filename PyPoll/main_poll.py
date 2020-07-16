@@ -11,7 +11,7 @@ candidate = []
 
 with open(election_data) as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
-    csv_header = next(csvfile) 
+    csv_header = next(csvreader) 
 
     print(csv_header)
 
@@ -32,6 +32,8 @@ print(f"Total Votes: {total_votes}")
 #print separating line
 print("--------------------")
 
+#get complete list of candidates who received votes
+candidates = ["Khan", "Correy", "Li", "O'Tooley"]
 
 
 
