@@ -20,6 +20,7 @@ with open(election_data) as csvfile:
         voter_id.append(int(row[0]))
         county.append(row[1])
         candidate.append(row[2])
+poll_data_zip = zip(voter_id, county, candidate)
 
 #print header for results output
 print("Election Results")
@@ -33,8 +34,11 @@ print(f"Total Votes: {total_votes}")
 print("--------------------")
 
 #get complete list of candidates who received votes
-candidates = ["Khan", "Correy", "Li", "O'Tooley"]
-
+candidate_list_set = set(candidate)
+unique_candidate_list = (list(candidate_list_set))
+for names in unique_candidate_list:
+    print(names)
+    
 
 
 
