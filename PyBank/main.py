@@ -45,17 +45,19 @@ greatest_profit = max(profits_losses)
 greatest_decrease = min(profits_losses)
 for date, profit_loss in budget_data_zip:
     if profit_loss == max(profits_losses):
-        print(f'Greatest Profit: {date} ${greatest_profit}')
+        greatest_profit_month = date
+        print(f'Greatest Profit: {greatest_profit_month} ${greatest_profit}')
     if profit_loss == min(profits_losses):
-        print(f'Greatest Decrease in Profit: {date} ${greatest_decrease}')
+        greatest_loss_month = date
+        print(f'Greatest Decrease in Profit: {greatest_loss_month} ${greatest_decrease}')
 
 #print data to a txt file
 
 fh = open("budget_data.txt", "w")
 fh.write('Total Months: ' + str(total_months) + '\n' + 'Net Total: ' + str(net_total) + '\n'
           + 'Average Change: ' + str(round(average, 2)) + '\n'
-		  + 'Greatest Profit: ' + str(greatest_profit) + '\n'
-		  + 'Greatest Decrease: ' + str(greatest_decrease))
+		  + 'Greatest Profit: ' + str(greatest_profit_month) + " " + str(greatest_profit) + '\n'
+		  + 'Greatest Decrease: ' + str(greatest_loss_month) + " " + str(greatest_decrease))
 fh.close()
 		
 # Print greatest decrease in losses (date and amount) over the entire period
