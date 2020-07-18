@@ -72,7 +72,7 @@ print("-------------------------")
 #print to .txt file
 
 fh = open("poll_results.txt", "w")
-fh.write('Total Votes: ' + str(total_votes) + '\n' + 'Li: ' + str(round(li_percent, 3)) + " " + str(li_count) + '\n'
+fh.write('Election Results' + '\n' + 'Total Votes: ' + str(total_votes) + '\n' + 'Li: ' + str(round(li_percent, 3)) + " " + str(li_count) + '\n'
           + 'Khan: ' + str(round(khan_percent, 3)) + " " + str(khan_count) + '\n'
 		  + 'Correy: ' + str(round(correy_percent, 3)) + " " + str(correy_count) + '\n'
 		  + "O'Tooley: " + str(round(otooley_percent, 3)) + " " + str(correy_count) + '\n' + "Winner: Khan")
